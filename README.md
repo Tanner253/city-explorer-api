@@ -15,6 +15,10 @@ npm start
 ## Architecture
 will add WRRC
 
+## User Stories
+
+- Given that a user enters a valid location in the input When the user clicks the "Explore!" button Then some old weather data will be displayed on the page
+
 ## Change Log
 
 - 1.0: adds scaffold

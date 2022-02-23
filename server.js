@@ -28,14 +28,14 @@ app.get('/weather', (req, res) =>{
     
     let weatherObj = data.find(obj => obj.city_name.toLowerCase() === searchQuery.toLowerCase());
 
-    console.log("this is weather Object: ", weatherObj);
+    console.log("this is weather Object: ", weatherObj.data);
+
     //weatherObj holds all weather data for the next 3 days.
     //map to find all days in object, and return an array of data
-    
     let dailyForecast = weatherObj.data.map(day => {
         return new Forecast(day);
     })
-    console.log("array of forcasts?", dailyForecast);
+    console.log("array of forcasts:", dailyForecast);
     res.send(dailyForecast);
 
   }catch(error){

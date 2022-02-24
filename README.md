@@ -13,7 +13,9 @@ npm i
 npm start
 
 ## Architecture
-will add WRRC
+![ScreenShot](./data/images/wrrc1.png)
+![ScreenShot](./data/images/WRRC.PNG)
+![ScreenShot](./data/images/cool.png)
 
 ## User Stories
 

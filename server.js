@@ -36,7 +36,6 @@ app.get('/weather', async (req, res) => {
 })
 //setup movie endpoint
 //example successful api call 
-//https://api.themoviedb.org/3/search/movie/?api_key=f7c1033c350dd558e0715a6ae1f8f99b&query=Seattle
 app.get('/movies', async (req, res) => {
   try{
     let searchQuery = req.query.searchQuery;

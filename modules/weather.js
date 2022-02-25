@@ -1,42 +1,42 @@
 'use strict';
 const axios = require('axios')
 
-let cache = {};
+let cache = require('./cache.js');
 
-async function getWeather (req, res) {
-  try{
-    
-    let lat = req.query.lat;
-    let lon = req.query.lon;
-    //cache key setup
-    let key = req.query.searchQuery + lat + lon;
-    //check cache
-    if(cache[key] && (Date.now() - cache[key].timestamp) <  1000 * 20){
-      console.log('cache hit, weather present, HURRAY');
-      res.status(200).send(cache[key].data);
-    }else{
-      console.log('cache miss in weather.js');
-      const weatherResponse = await axios.get(`${process.env.WEATHER_URL}?key=${process.env.WEATHER_API_KEY}&lat=${lat}&lon=${lon}`);
-      
-      let dailyForecast = weatherResponse.data.data.map(day => {
-        return new Forecast(day);
-      })
-      cache[key] = {
-        data: dailyForecast,
-        timestamp: Date.now()
-      }
-      res.send(dailyForecast);
-    }
-  }catch(error){
-    res.status(500).send('Weather route problem');
+
+function getWeather(latitude, longitude) {
+  const key = 'weather-' + latitude + longitude;
+  const url = `http://api.weatherbit.io/v2.0/forecast/daily/?key=${process.env.WEATHER_API_KEY}&lang=en&lat=${latitude}&lon=${longitude}&days=5`;
+
+  if (cache[key] && (Date.now() - cache[key].timestamp < 50000)) {
+    console.log('Cache hit in weather, HURRAY');
+  } else {
+    console.log('Cache miss : weather');
+    cache[key] = {};
+    cache[key].timestamp = Date.now();
+    cache[key].data = axios.get(url)
+    .then(response => parseWeather(response.data));
+  }
+  
+  return cache[key].data;
+}
+
+function parseWeather(weatherData) {
+  try {
+    const weatherSummaries = weatherData.data.map(day => {
+      return new Weather(day);
+    });
+    return Promise.resolve(weatherSummaries);
+  } catch (e) {
+    return Promise.reject(e);
   }
 }
 
-//parse information for the weather response
-class Forecast {
-  constructor(day){
+class Weather {
+  constructor(day) {
     this.date = day.datetime;
-    this.description = `Weather description - ${day.weather.description}`;
+    this.description =  `Weather description - ${day.weather.description}${day.datetime}`;
   }
 }
-module.exports = getWeather;
+
+    module.exports = getWeather;

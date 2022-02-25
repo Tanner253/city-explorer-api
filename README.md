@@ -16,9 +16,11 @@ npm start
 ![ScreenShot](./data/images/wrrc1.png)
 ![ScreenShot](./data/images/wrrc.png)
 ![ScreenShot](./data/images/cool.png)
-![ScreenShot](./data/images/WRRCLAB09-TANNER-REY.png..
-![ScreenShot](./data/images/wrrc-2-25.png)
 
+
+
+![ScreenShot](./data/images/WRRCLAB09-TANNER-REY.png)
+![ScreenShot](./data/images/wrrc-2-25.png)
 
 ## User Stories
 
@@ -27,5 +29,59 @@ npm start
 ## Change Log
 
 - 1.0: adds scaffold
+# feature list
+Name of feature: Init
+
+Estimate of time needed to complete: 30 min
+
+Start time: 1:30
+
+Finish time:2 
+
+Actual time needed to complete:30 min
+
+Name of feature: locations
+Estimate of time needed to complete: 1 hr 
+Start time: 4
+Finish time:530
+Actual time needed to complete:130
+Name of feature: maps
+Estimate of time needed to complete: 30 min
+Start time: 530
+Finish time:630
+Actual time needed to complete:1hr
+Name of feature: error
+Estimate of time needed to complete: 1 hr
+Start time: 7
+Finish time:930
+Actual time needed to complete:2 and a half hourss
+Name of feature: weather (live)
+Estimate of time needed to complete: 1 hr
+Start time: 1:15
+Finish time:2:15
+Actual time needed to complete:1hr
+Name of feature: Movies
+Estimate of time needed to complete: 1 hr
+Start time: 2:30
+Finish time: 4:30
+Actual time needed to complete:2 hr
+Name of feature: deploy
+Estimate of time needed to complete: 15 min
+Start time: 5
+Finish time: 6
+Actual time needed to complete: 1 hour
+Name of feature: Modularize3
+Estimate of time needed to complete: 3 hr
+Start time: 1:30 pm
+Finish time:
+Actual time needed to complete:
+Name of feature: 
+Estimate of time needed to complete: 
+Start time: 
+Finish time:
+Actual time needed to complete:
+
+
+
 
 ## Credit and Collaborations

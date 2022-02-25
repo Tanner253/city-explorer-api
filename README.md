@@ -14,7 +14,7 @@ npm start
 
 ## Architecture
 ![ScreenShot](./data/images/wrrc1.png)
-![ScreenShot](./data/images/WRRC.PNG)
+![ScreenShot](./data/images/wrrc.png)
 ![ScreenShot](./data/images/cool.png)
 
 ## User Stories
